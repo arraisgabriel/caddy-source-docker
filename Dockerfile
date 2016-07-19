@@ -1,16 +1,16 @@
 FROM golang:latest
 MAINTAINER arraisgabriel  <arraisgabriel@gmail.com>
 
-ENV CADDYPATH github.com/mholt/caddy
-ENV CADDYSRC $GOPATH/src/${CADDYPATH}
-ARG caddyVersion=v0.9-beta.2
+ENV CADDYGOPATH github.com/mholt/caddy
+ENV CADDYSRC $GOPATH/src/${CADDYGOPATH}
+ARG caddyVersion=v0.9.0
 ARG caddyMainPath="${CADDYSRC}/caddy"
 
 WORKDIR $GOPATH
 
-RUN go get ${CADDYPATH} && \
+RUN go get ${CADDYGOPATH} && \
     cd ${CADDYSRC} && \
     git checkout $caddyVersion && \
     cd $caddyMainPath && \
     #Download all caddy/caddy dependencies
-    go get 
+    go get
