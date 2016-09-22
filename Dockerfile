@@ -3,7 +3,7 @@ MAINTAINER arraisgabriel  <arraisgabriel@gmail.com>
 
 ENV CADDYGOPATH github.com/mholt/caddy
 ENV CADDYSRC $GOPATH/src/${CADDYGOPATH}
-ARG caddyVersion=v0.9.1
+ARG caddyVersion=v0.9.2
 ARG caddyMainPath="${CADDYSRC}/caddy"
 
 WORKDIR $GOPATH
